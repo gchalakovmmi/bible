@@ -1,0 +1,14 @@
+services:
+  apache:
+    image: httpd:latest
+    env_file: .env
+    ports:
+      - 8080:80
+    volumes:
+    - ./html:/usr/local/apache2/htdocs
+    # networks:
+    #   - reverse-proxy_net
+
+# networks:
+#   reverse-proxy_net: 
+#     external: true
